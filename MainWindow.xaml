@@ -23,7 +23,7 @@
         <Button Content="Export data" Foreground="#E9C46A" Grid.Column="3" Grid.Row="1" Margin="5" Background="#2a9d8f" />
         <ScrollViewer Margin="5" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
             <StackPanel Orientation="Horizontal">
-                <ScrollViewer Margin="5">
+                <ScrollViewer>
                     <StackPanel>
                         <AloNeaPozabi:TaskControl Margin="2" />
                         <AloNeaPozabi:TaskControl Margin="2" />

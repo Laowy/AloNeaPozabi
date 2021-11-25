@@ -23,6 +23,21 @@ namespace AloNeaPozabi
         public TaskControl()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
+
+        public TaskControl(string jName, DateTime dueDate, DateTime start, bool isdone)
+        {
+            InitializeComponent();
+            this.DataContext = this;
+        }
+
+        public DateTime StartDate { get; set; }
+
+        public string JobName { get; set; }
+
+        public DateTime DueDate { get; set; }
+
+        public bool IsComplete { get; set; }
     }
 }

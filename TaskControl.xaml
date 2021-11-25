@@ -6,24 +6,21 @@
 
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800" Background="AntiqueWhite">
-    <Grid>
+    <Grid Margin="2">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
-        <CheckBox Grid.Row="0" Content="is finished?" />
-        <Button  Grid.Row="0" Grid.Column="1" Content="delete tesk" />
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="1"  Text="ime opravila" />
-        <TextBlock Grid.ColumnSpan="2"  Grid.Row="2" Text="rok opravila" />
-        <TextBlock  Grid.ColumnSpan="2" Grid.Row="3" Text="ostali cas opravila" />
-        <ProgressBar  Grid.ColumnSpan="2" Grid.Row="4" Minimum="0" Maximum="100" Value="20" />
+        <CheckBox x:Name="CheckboxIsCompleted" Grid.Row="0" Content="Completed?" />
+        <TextBlock x:Name="TextBlockJobName" Grid.Row="1"  Text="ime opravila" />
+        <TextBlock x:Name="TextBlockDueDate"   Grid.Row="2" Text="rok opravila" />
+        <TextBlock x:Name="TextBlockTimeLeft" Grid.Row="3" Text="ostali cas opravila" />
+        <ProgressBar x:Name="ProgressTimeLeft"  Grid.Row="4" Minimum="0" Maximum="100" Value="20" Margin=" 1" />
+        <Button x:Name="ButtonRemoveTask"  Grid.Row="5"  Content="delete task" />
     </Grid>
 </UserControl>
