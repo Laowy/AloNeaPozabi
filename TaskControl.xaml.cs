@@ -26,18 +26,28 @@ namespace AloNeaPozabi
             this.DataContext = this;
         }
 
-        public TaskControl(string jName, DateTime dueDate, DateTime start, bool isdone)
+        public TaskControl(string jName, DateTime dueDate, bool isdone)
         {
             InitializeComponent();
             this.DataContext = this;
         }
 
-        public DateTime StartDate { get; set; }
+        public string JobName {
+            get { return TextBlockJobName.Text; }
+            set { TextBlockJobName.Text = value; }
+        }
 
-        public string JobName { get; set; }
+        public DateTime DueDate {
+            get {
+                string tmp = TextBlockDueDate.Text;
+                return new DateTime(Convert.ToInt32(tmp.Substring(6, 4)), Convert.ToInt32(tmp.Substring(3, 2)), Convert.ToInt32(tmp.Substring(0, 2)));
+            }//year month day input format
+            set { TextBlockJobName.Text = value.ToString("dd.mm.yyyy"); }
+        }
 
-        public DateTime DueDate { get; set; }
-
-        public bool IsComplete { get; set; }
+        public bool IsComplete {
+            get { return (bool)CheckboxIsCompleted.IsChecked; }
+            set { CheckboxIsCompleted.IsChecked = value; }
+        }
     }
 }

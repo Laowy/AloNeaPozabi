@@ -10,15 +10,37 @@ namespace AloNeaPozabi
     internal class Job : INotifyPropertyChanged
     {
         private string imeOpravila;
+        private bool isDone;
+        private DateTime deadline;
 
-        public string JobName
+        public bool IsDone {
+            get => isDone;
+            set {
+                isDone = value;
+                OnPropertyChanged("IsDone");
+            }
+        }
+
+        public Job(string jobName, DateTime deadline, bool isDone)
         {
-            get
-            {
+            JobName = jobName;
+            Deadline = deadline;
+            IsDone = isDone;
+        }
+
+        public DateTime Deadline {
+            get => deadline;
+            set {
+                deadline = value;
+                OnPropertyChanged("Deadline");
+            }
+        }
+
+        public string JobName {
+            get {
                 return imeOpravila;
             }
-            set
-            {
+            set {
                 imeOpravila = value;
                 OnPropertyChanged("JobName");
             }

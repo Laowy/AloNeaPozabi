@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-
+d:DataContext="{d:DesignInstance Type=AloNeaPozabi:ViewModel}"
         mc:Ignorable="d"
         Title="MainWindow"  Height="450" Width="800">
     <Grid Background="#264653">
@@ -22,53 +22,25 @@
         <Button Content="Import data" Foreground="#E9C46A" Grid.Column="2" Grid.Row="1" Margin="5" Background="#2a9d8f" />
         <Button Content="Export data" Foreground="#E9C46A" Grid.Column="3" Grid.Row="1" Margin="5" Background="#2a9d8f" />
         <ScrollViewer Margin="5" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
-            <StackPanel Orientation="Horizontal">
-                <ScrollViewer>
-                    <StackPanel>
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                    </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer Margin="5">
-                    <StackPanel>
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                    </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer Margin="5">
-                    <StackPanel>
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                    </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer Margin="5">
-                    <StackPanel>
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                    </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer Margin="5">
-                    <StackPanel>
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                        <AloNeaPozabi:TaskControl Margin="2" />
-                    </StackPanel>
-                </ScrollViewer>
-            </StackPanel>
+
+            <ListBox x:Name="ListBoxRoot" ItemsSource="{Binding ListList}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ScrollViewer>
+                            <StackPanel>
+                                <ListBox x:Name="ListBoxChild" ItemsSource="{Binding }">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate DataType="Job">
+                                            <AloNeaPozabi:TaskControl JobName="{Binding }" />
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Button x:Name="ButtonAddTask" Margin="5" Content="Add task"  Click="ButtonAddTask_Click" />
+                            </StackPanel>
+                        </ScrollViewer>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </ScrollViewer>
     </Grid>
 </Window>

@@ -23,3 +23,5 @@ C:\Users\Jakob\Desktop\FAXE\MAG\RUPS proj\AloNeaPozabi\AloNeaPozabi\obj\Debug\ne
 C:\Users\Jakob\Desktop\FAXE\MAG\RUPS proj\AloNeaPozabi\AloNeaPozabi\obj\Debug\net5.0-windows\AloNeaPozabi.csproj.AssemblyReference.cache
 C:\Users\Jakob\Desktop\FAXE\MAG\RUPS proj\AloNeaPozabi\AloNeaPozabi\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Jakob\Desktop\FAXE\MAG\RUPS proj\AloNeaPozabi\AloNeaPozabi\obj\Debug\net5.0-windows\AloNeaPozabi_MarkupCompile.lref
+C:\Users\Jakob\Desktop\FAXE\MAG\RUPS proj\AloNeaPozabi\AloNeaPozabi\obj\Debug\net5.0-windows\JobEditor.g.cs
+C:\Users\Jakob\Desktop\FAXE\MAG\RUPS proj\AloNeaPozabi\AloNeaPozabi\obj\Debug\net5.0-windows\JobEditor.baml
